@@ -1,0 +1,29 @@
+<h1>{{ client.client_name }}의 신용등급은</h1>
+
+{% if client.grade == 1 %}
+  <h3>[ 일반 ] 등급입니다!</h3>
+  grade:{{client.grade}}
+
+{% elif client.grade == 0 %}
+  <h3>[ 위험 ] 등급입니다!</h3>
+  grade:{{client.grade}}
+
+{% elif client.grade == 2 %}
+  <h3>[ 우량 ] 등급입니다!</h3>
+  grade:{{client.grade}}
+
+{% else %}
+  <h4>설문을 다시 선택해주세요!</h4>
+  <p>신용등급 예측하기는 모든 선택지를 입력하셔야합니다.</p>
+{% endif %}
+
+<a href="{% url 'predict:detail' client.id %}">설문 다시하기</a> 
+{% comment %} 
+["나이","연차","연간소득","부동산유무","차유무","업무용핸드폰유무","핸드폰유무","이메일유무","카드발급년수","자녀수","가족수","소득분류","교육","가정","집","직업유형"]
+
+
+{% for value in values %}
+  //{{ value }}//
+{% endfor %}
+
+ {% endcomment %}

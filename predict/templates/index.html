@@ -1,0 +1,11 @@
+{% if Client_list %}
+  <ul>
+    {% for client in Client_list %}
+      <li>
+        <a href="{% url 'predict:detail' client.id %}">{{ client.client_name }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>Register the Client.</p>
+{% endif %}

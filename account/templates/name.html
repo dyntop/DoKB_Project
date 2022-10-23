@@ -1,0 +1,6 @@
+<h2>이름을 입력하시오</h2>
+<form action="{% url 'account:result' %}" method='POST'>
+  {% csrf_token %}
+  <input type="text" name="name">
+  <input type="submit" value="submit">
+</form>
